@@ -1,0 +1,12 @@
+
+<!-- Site header -->
+<header>
+	<nav class="header-nav">
+		<h1 class="header-title">
+			{{@blog.title}}
+			{{#if @blog.logo}}<a id="site-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+		</h1>
+		
+		{{> links}}
+	</nav>
+</header>

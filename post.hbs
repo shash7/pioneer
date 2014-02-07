@@ -1,0 +1,60 @@
+
+<!--  Post -->
+
+{{!< default}}
+
+<main class="content" role="main">
+	<article class="{{post_class}}" itemscope="" itemtype="http://schema.org/BlogPosting">
+		{{#post}}
+		<h2 class="post-title" itemprop="name headline">{{{title}}}</h2>
+		<span class="post-meta">Posted on <time datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">{{date format='DD MMM YYYY'}}</time> 			{{#if tags}}in {{tags separator=" | "}}{{/if}}</span>
+		<br />
+		<span itemprop="author" itemscope="" itemtype="http://schema.org/Person">By {{author.name}}</span>
+		<section class="post-content" itemprop="articleBody">
+			{{content}}
+		</section>
+
+		<div class="post-footer">
+		{{#if author}}
+			<h3>
+				About the author
+			</h3>
+			<section class="author clearfix">
+				{{#if author.image}}
+				<img class="author-image"src={{author.image}}></img>
+			{{/if}}
+				<div class="author-container">
+					<b>{{author.name}}</b> | <small>{{author.email}}</small> {{#if author.website}}| <small>{{author.website}}</small>{{/if}}
+					<p class="author-bio">{{author.bio}}</p>
+				</div>
+			</section>
+		{{/if}}
+
+			<section class="share">
+				<h3>
+					Share this post
+				</h3>
+				<a class="social-box twitter" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
+					onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+					<span class="icon-twitter social"></span>
+					<span>Twitter</span>
+				</a>
+				<a class="social-box facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+					onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+					<span class="icon-facebook social"></span>
+					<span>Facebook</span>
+				</a>
+				<a class="social-box googleplus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+					 onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+					<span class="icon-googleplus social"></span>
+					<span>Google+</span>
+				</a>
+			</section>
+		
+		{{> comments}}
+	
+		</div>
+			
+		{{/post}}
+	</article>
+</main>

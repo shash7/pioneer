@@ -1,0 +1,9 @@
+{
+	"name": "pioneer",
+	"version": "0.5.0",
+	"author": "shash7",
+	"devDependencies" : {
+		"gulp-uglify": ">= 0.2.0",
+		"gulp-concat": ">= 2.1.7"
+	}
+}
